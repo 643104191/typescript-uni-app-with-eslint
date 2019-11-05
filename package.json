@@ -1,0 +1,90 @@
+{
+  "name": "typescript-uni-app-with-eslint",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "npm run dev:h5",
+    "build": "npm run build:h5",
+    "build:manifest": "cross-env NODE_ENV=production node ./src/manifest.js",
+    "build:app-plus": "npm run build:manifest && cross-env NODE_ENV=production UNI_PLATFORM=app-plus vue-cli-service uni-build",
+    "build:custom": "cross-env NODE_ENV=production uniapp-cli custom",
+    "build:h5": "cross-env NODE_ENV=production UNI_PLATFORM=h5 vue-cli-service uni-build",
+    "build:mp-alipay": "cross-env NODE_ENV=production UNI_PLATFORM=mp-alipay vue-cli-service uni-build",
+    "build:mp-baidu": "cross-env NODE_ENV=production UNI_PLATFORM=mp-baidu vue-cli-service uni-build",
+    "build:mp-qq": "cross-env NODE_ENV=production UNI_PLATFORM=mp-qq vue-cli-service uni-build",
+    "build:mp-toutiao": "cross-env NODE_ENV=production UNI_PLATFORM=mp-toutiao vue-cli-service uni-build",
+    "build:mp-weixin": "npm run build:manifest && cross-env NODE_ENV=production UNI_PLATFORM=mp-weixin vue-cli-service uni-build",
+    "dev:manifest": "cross-env NODE_ENV=development node ./src/manifest.js",
+    "dev:app-plus": "npm run dev:manifest && cross-env NODE_ENV=development UNI_PLATFORM=app-plus vue-cli-service uni-build --watch",
+    "dev:custom": "cross-env NODE_ENV=development uniapp-cli custom",
+    "dev:h5": "cross-env NODE_ENV=development UNI_PLATFORM=h5 vue-cli-service uni-serve",
+    "dev:mp-alipay": "cross-env NODE_ENV=development UNI_PLATFORM=mp-alipay vue-cli-service uni-build --watch",
+    "dev:mp-baidu": "cross-env NODE_ENV=development UNI_PLATFORM=mp-baidu vue-cli-service uni-build --watch",
+    "dev:mp-qq": "cross-env NODE_ENV=development UNI_PLATFORM=mp-qq vue-cli-service uni-build --watch",
+    "dev:mp-toutiao": "cross-env NODE_ENV=development UNI_PLATFORM=mp-toutiao vue-cli-service uni-build --watch",
+    "dev:mp-weixin": "npm run dev:manifest && cross-env NODE_ENV=development UNI_PLATFORM=mp-weixin vue-cli-service uni-build --watch",
+    "info": "node node_modules/@dcloudio/vue-cli-plugin-uni/commands/info.js",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "core-js": "^3.3.2",
+    "@dcloudio/uni-app-plus": "^2.0.0-23720191024001",
+    "@dcloudio/uni-h5": "^2.0.0-23720191024001",
+    "@dcloudio/uni-helper-json": "*",
+    "@dcloudio/uni-mp-alipay": "^2.0.0-23720191024001",
+    "@dcloudio/uni-mp-baidu": "^2.0.0-23720191024001",
+    "@dcloudio/uni-mp-qq": "^2.0.0-23720191024001",
+    "@dcloudio/uni-mp-toutiao": "^2.0.0-23720191024001",
+    "@dcloudio/uni-mp-weixin": "^2.0.0-23720191024001",
+    "@dcloudio/uni-stat": "^2.0.0-23720191024001",
+    "flyio": "^0.6.2",
+    "regenerator-runtime": "^0.12.1",
+    "vue": "^2.6.10",
+    "vue-class-component": "^6.3.2",
+    "vue-property-decorator": "^8.0.0",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@babel/plugin-syntax-typescript": "^7.2.0",
+    "@dcloudio/types": "*",
+    "@dcloudio/uni-cli-shared": "^2.0.0-23720191024001",
+    "@dcloudio/uni-template-compiler": "^2.0.0-23720191024001",
+    "@dcloudio/vue-cli-plugin-hbuilderx": "^2.0.0-23720191024001",
+    "@dcloudio/vue-cli-plugin-uni": "^2.0.0-23720191024001",
+    "@dcloudio/vue-cli-plugin-uni-optimize": "^2.0.0-23720191024001",
+    "@dcloudio/webpack-uni-mp-loader": "^2.0.0-23720191024001",
+    "@dcloudio/webpack-uni-pages-loader": "^2.0.0-23720191024001",
+    "@vue/cli-plugin-babel": "^4.0.0",
+    "@vue/cli-plugin-eslint": "^4.0.0",
+    "@vue/cli-plugin-typescript": "^4.0.0",
+    "@vue/cli-service": "^4.0.0",
+    "@vue/eslint-config-standard": "^4.0.0",
+    "@vue/eslint-config-typescript": "^4.0.0",
+    "babel-plugin-import": "^1.11.0",
+    "eslint": "^5.16.0",
+    "eslint-plugin-html": "^6.0.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "lint-staged": "^9.4.2",
+    "node-sass": "^4.12.0",
+    "postcss-comment": "^2.0.0",
+    "sass-loader": "^8.0.0",
+    "typescript": "~3.5.3",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "browserslist": [
+    "Android >= 4",
+    "ios >= 8"
+  ],
+  "uni-app": {
+    "scripts": {}
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,vue,ts}": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  }
+}
