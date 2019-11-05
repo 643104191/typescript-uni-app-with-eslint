@@ -16,6 +16,12 @@ npm run build:manifest
 npm run build
 ```
 
+### 编译生成微信小程序
+```
+npm run build:mp-weixin
+npm run dev:mp-weixin
+```
+
 ### Lints and fixes files
 ```
 npm run lint
