@@ -4,8 +4,23 @@ module.exports = {
     node: true
   },
   globals: {
-    uni: true
+    uni: true,
+    wx: true,
+    App: true,
+    getApp: true,
+    Page: true,
+    getCurrentPages: true,
+    Component: true,
+    Behavior: true
   },
+  overrides: [
+    {
+      files: ['*.vue', '*.ts', '*.tsx'],
+      rules: {
+        '@typescript-eslint/no-unused-vars': [2, { args: 'none' }]
+      }
+    }
+  ],
   'extends': [
     'plugin:vue/essential',
     '@vue/standard',
